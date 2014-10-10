@@ -1,0 +1,9 @@
+kibana
+logstash
+elasticsearch-*.tar.gz
+elasticsearch*/
+kibana-*.tar.gz
+kibana*/
+logstash-*.tar.gz
+logstash*/
+.DS_Store
