@@ -1,7 +1,7 @@
-Log Management for Spring Boot Applications with Logstash, Elastichsearch and Kibana 
+Log Management for Spring Boot Applications with Logstash, Elasticsearch and Kibana 
 ====================================================================================
 
-For further informations and detailed installation instructions please refer to my blog post on the codecentric Blog. The following instructions give on a quick overview.
+For further informations and detailed installation instructions please refer to my blog post on the codecentric Blog. The following instructions give you only a quick overview.
 
 ## Clone the repository
 
