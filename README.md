@@ -1,16 +1,16 @@
-Logfilemanagement for Spring Boot Applications with Logstash, Elastichsearch and Kibana 
+Log Management for Spring Boot Applications with Logstash, Elastichsearch and Kibana 
 ====================================================================================
 
 For further informations and detailed installation instructions please refer to my blog post on the codecentric Blog. The following instructions give on a quick overview.
 
-# Clone the repository
+## Clone the repository
 
 ```shell
 git clone http://github.com/denschu/elk-example
 cd elk-example
 ```
 
-# Install and run Elasticsearch
+## Install and run Elasticsearch
 
 ```shell
 curl -O https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.1.1.tar.gz
@@ -18,7 +18,7 @@ tar zxvf elasticsearch-1.1.1.tar.gz
 ./elasticsearch-1.1.1/bin/elasticsearch 
 ```
 
-# Install and Run Kibana Dashboard
+## Install and Run Kibana Dashboard
 
 ```shell
 curl -O https://download.elasticsearch.org/kibana/kibana/kibana-3.1.0.tar.gz
@@ -33,7 +33,7 @@ Open the preconfigured Logstash Dashboard in Kibana
 http://localhost:8087/index.html#/dashboard/file/logstash.json
 ```
 
-# Install Logstash Agent
+## Install Logstash Agent
 
 ```shell
 curl -O https://download.elasticsearch.org/logstash/logstash/logstash-1.4.2.tar.gz
@@ -46,7 +46,7 @@ Copy additional grok pattern to the agent directory
 cp custompatterns logstash-1.4.2/patterns/
 ```
 
-# Run Logstash Agent with Spring Boot Log Configuration
+## Run Logstash Agent with Spring Boot Log Configuration
 
 ```shell
 ./logstash-1.4.2/bin/logstash agent -v -f logstash-spring-boot.conf
@@ -74,7 +74,7 @@ Logstash Grok Pattern
 JAVACLASSSHORT (?:[\.]?[a-zA-Z0-9-]+\.)*[A-Za-z0-9$]+
 ```
 
-# Run the batch test application and start a batch job
+## Run the batch test application and start a batch job
 
 ```shell
 cd loggging-example-batch/
@@ -93,7 +93,7 @@ Open the preconfigured Logstash Dashboard in Kibana again and you will see upcom
 http://localhost:8087/index.html#/dashboard/file/logstash.json
 ```
 
-# See also
+## See also
 
 http://logstash.net/docs/1.4.2/tutorials/getting-started-with-logstash
 http://www.elasticsearch.org/overview/kibana/installation/
