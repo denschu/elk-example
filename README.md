@@ -1,7 +1,7 @@
-Log Management with Logstash, Elastichsearch and Kibana
-======================================================================
+Logfilemanagement for Spring Boot Applications with Logstash, Elastichsearch and Kibana 
+====================================================================================
 
-For detailed installation instructions please refer to my blog post.
+For further informations and detailed installation instructions please refer to my blog post on the codecentric Blog. The following instructions give on a quick overview.
 
 # Clone the repository
 
@@ -97,3 +97,4 @@ http://localhost:8087/index.html#/dashboard/file/logstash.json
 
 http://logstash.net/docs/1.4.2/tutorials/getting-started-with-logstash
 http://www.elasticsearch.org/overview/kibana/installation/
+https://github.com/elasticsearch/logstash-forwarder
