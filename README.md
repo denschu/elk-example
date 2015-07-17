@@ -12,12 +12,16 @@ cd elk-example
 
 ## Build the Example Application
 
+```shell
 cd loggging-example-batch
 mvn clean install
+```
 
 ## Run the ELK Stack with Docker (Compose)
 
+```shell
 docker-compose up
+```
 
 ## Open Kibana
 
