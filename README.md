@@ -76,7 +76,7 @@ https://github.com/elasticsearch/logstash-forwarder
 ## Generate SSL Certs for Logstash Forwarder
 
 ```shell
-openssl req -x509  -batch -nodes -newkey rsa:2048 -keyout logstash-forwarder.key -out logstash-forwarder.crt -subj /CN=logstash
+openssl req -x509  -batch -nodes -newkey rsa:2048 -days 3065 -keyout logstash-forwarder.key -out logstash-forwarder.crt -subj /CN=logstash
 ```
 
 
