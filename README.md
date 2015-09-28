@@ -46,25 +46,18 @@ Example log statement
 Logstash Grok Pattern
 
 ```shell
-%{TIMESTAMP_ISO8601:logtime}%{SPACE}%{LOGLEVEL:loglevel} %{SPACE}%{NUMBER:pid}%{SPACE}%{SYSLOG5424SD:threadname}%{SPACE}---%{SPACE}%{JAVACLASSSHORT:classname}%{SPACE}:%{SPACE}%{GREEDYDATA:logmessage}
+%{TIMESTAMP_ISO8601:logtime}%{SPACE}%{LOGLEVEL:loglevel} %{SPACE}%{NUMBER:pid}%{SPACE}---%{SPACE}%{SYSLOG5424SD:threadname}%{SPACE}%{JAVACLASSSHORT:classname}%{SPACE}:%{SPACE}%{GREEDYDATA:logmessage}
 ```
+Tested with Spring Boot 1.2.6.RELEASE
 
 ```shell
 JAVACLASSSHORT (?:[\.]?[a-zA-Z0-9-]+\.)*[A-Za-z0-9$]+
 ```
 
-## Run the batch test application and start a batch job
-
-To start a job use this curl command:
-
-```shell
-curl --data 'jobParameters=pathToFile=classpath:partner-import.csv' <boot2docker-ip>:8090/batch/operations/jobs/flatfileJob
-```
-
 Open the preconfigured Logstash Dashboard in Kibana again and you will see upcoming logstatements
 
 ```shell
-http://<boot2docker-ip>:5601
+http://<docker-host-ip>:5601
 ```
 
 ## See also
@@ -78,8 +71,6 @@ https://github.com/elasticsearch/logstash-forwarder
 ```shell
 openssl req -x509  -batch -nodes -newkey rsa:2048 -days 3065 -keyout logstash-forwarder.key -out logstash-forwarder.crt -subj /CN=logstash
 ```
-
-
 
 
 

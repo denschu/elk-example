@@ -1,4 +1,4 @@
-FROM java:7
+FROM java:8
 MAINTAINER Dennis Schulte <mail@dennis-schulte.de>
 
 # install updates
@@ -16,4 +16,4 @@ COPY target/*.jar /service.jar
 EXPOSE 8080
 
 # define default jar name
-ENTRYPOINT java $JVM_OPTS -jar /service.jar $ARGS
+ENTRYPOINT java $JVM_OPTS -jar /service.jar duration=1000 $ARGS

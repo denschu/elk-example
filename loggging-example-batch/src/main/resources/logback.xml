@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<include resource="org/springframework/boot/logging/logback/base.xml" />
-	<appender name="JSON" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	<appender name="JSON" class="ch.qos.logback.core.FileAppender">
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>INFO</level>
         </filter>
@@ -9,13 +9,6 @@
 			<pattern>${FILE_LOG_PATTERN}</pattern>
 		</encoder>
         <file>${LOG_FILE}.json</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-			<fileNamePattern>${LOG_FILE}.%i</fileNamePattern>
-		</rollingPolicy>
-		<triggeringPolicy
-			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-			<MaxFileSize>1MB</MaxFileSize>
-		</triggeringPolicy>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
             <includeCallerInfo>true</includeCallerInfo>
             <customFields>{"appname":"${pom.artifactId}","version":"${pom.version}"}</customFields>

@@ -4,25 +4,30 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.codecentric.batch</groupId>
 	<artifactId>loggging-example-batch</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>loggging-example-batch</name>
 	<description>Demo project</description>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.1.7.RELEASE</version>
+		<version>1.2.6.RELEASE</version>
 	</parent>
+	<properties>
+		<start-class>de.codecentric.batch.Application</start-class>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-starter-batch-web</artifactId>
-			<version>1.2.2.RELEASE</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-batch</artifactId>
 		</dependency>
 		<!-- JSON Logging for Logstash -->
         <dependency>
                 <groupId>net.logstash.logback</groupId>
                 <artifactId>logstash-logback-encoder</artifactId>
-                <version>2.5</version>
+                <version>4.5.1</version>
         </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -30,12 +35,6 @@
             <scope>test</scope>
 		</dependency>
 	</dependencies>
-	<properties>
-		<start-class>de.codecentric.batch.Application</start-class>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.7</java.version>
-	</properties>
 	<build>
 		<plugins>
 			<plugin>
@@ -49,34 +48,8 @@
 					<includes>
 						<include>**/*Test.java</include>
 					</includes>
-					<excludes>
-						<exclude>**/*IntegrationTest.java</exclude>
-					</excludes>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-failsafe-plugin</artifactId>
-				<configuration>
-					<includes>
-						<include>**/*IntegrationTest.java</include>
-					</includes>
-				</configuration>
-				<executions>
-					<execution>
-						<id>integration-test</id>
-						<goals>
-							<goal>integration-test</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>verify</id>
-						<goals>
-							<goal>verify</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>			
+			</plugin>		
 		</plugins>
 	</build>
 </project>
