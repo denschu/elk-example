@@ -16,6 +16,7 @@ logstash:
   command: logstash -f /conf/logstash-spring-boot.conf
   ports:
    - "5043:5043"
+   - "5044:5044"
   links:
    - elasticsearch
 logstashforwarder:
@@ -31,3 +32,5 @@ application:
    - "8090:8090"
   volumes:
    - /tmp/
+  links:
+   - logstash
