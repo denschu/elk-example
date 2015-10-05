@@ -4,5 +4,5 @@ elasticsearch*/
 kibana-*.zip
 kibana*/
 logstash-*.tar.gz
-logstash*/
+logstash-1*/
 .DS_Store
